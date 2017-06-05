@@ -1,7 +1,150 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/beer.ico">
+
+    <title>EECS 349 Final Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+
+    <link href="./css/custom.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div id="header-custom" class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#summary">Summary</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#report">Report</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#conclusion">Conclusion</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+     <header>
+        <div class="container">
+            <div class="intro-text">
+                <center><div class="intro-heading">Stock price prediction and trading strategy</div></center>
+                <center><div class="intro-lead-in"></div><br><br></center>
+                <center><div class="intro-lead-in-team">Yongchi Zhang, Guowei Zhang
+<br>EECS 349 Machine Learning<br><br>
+<a href="mailto:yongchizhang2017@u.northwestern.edu" id="contact">Contact: yongchizhang2017@u.northwestern.edu</a></div></center>
+            </div>
+        </div>
+    </header>
+
+    <section id="summary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Summary</h2>
+                </div>
+            </div>
+            <div class="row text-left" id="width">
+                <div class="col-lg-12">
+                        <p>
+                        As our topic is about stock price prediction, we will use history data for our input. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price and volume. Our algorithm will output the trading strategy for the next day: buying, selling or doing nothing. Our task is important because stock is always a good way to invest.</p>
+                        <p>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="report">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Report</h2>
+                </div>
+            </div>
+            <div class="row text-left" id="width">
+                <div class="col-lg-12" >
+                    <p>
+                        We are going to use the stock data from 2012-2016. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price and volume. We are going to use the stock data from 2012-2014 as our training set, stock data in 2015 as our validation set, and data in 2016 as our testing set. We are going to set up a suitable rolling-window training scheme, which means our training set will synchronize with the new date. The length of our window depends on the result of the training data.
+                    </p>
+                    
+                    <p>
+                        
+                    </p>
+                    <figure id=figure>
+                        <a>
+                            <img src="img/header-bg.jpg" id="graph">
+                        </a>
+                        <center><figcaption>Stock Predict</figcaption></center>
+                    </figure>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Conclusion</h2>
+                </div>
+            </div>
+            <div class="row text-left" id="width">
+                <div class="col-lg-12">
+                        <p style="color:#F0BB5F;">
+                            Our algorithm performs SVM (Support Vector Machine) on stock price prediction. We plot the Cumulative Rate of Return of our trading strategy as above. As we can see our trading strategy performs a rate of return 35% in 90 days, with a success rate of 53.15%. During our study, we use LIBSVM, which is a library for support vector machines. It is developed by Prof. Lin Chih-Jen of National Taiwan University. Here is the link:
+
+                        </p>
+                         <p style="color:#F0BB5F;">
+                            
+                        <br><br>
+                        </p>
+                        <center><a href="http://brownrout.github.io/eecs-349-final-project/downloads/Restaurants_Data.arff" id="download">Download our data</a></center>
+                        <center><a href="http://brownrout.github.io/eecs-349-final-project/downloads/Yelp_Report.pdf" id="download">Download our report as a PDF</a></center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  
+
+</body></html>
