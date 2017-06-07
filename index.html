@@ -62,9 +62,18 @@
             <div class="row text-left" id="width">
                 <div class="col-lg-12">
                         <p>
-                        SVM(Support Vector Machine) is a machine learning algorithm widely used in pattern recognition, data mining and time series prediction. In our project, we use SVM to forecast stock prices with history data for our input. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20. Our algorithm will predict the stock closing price of next day and output the trading strategy for the next day: buying, selling or doing nothing. Our task is important because stock is always a good way to invest.</p>
-                        <p>
+                        SVM(Support Vector Machine) is a machine learning algorithm widely used in pattern recognition, data mining and time series prediction. In our project, we use SVM to forecast stock prices with history data for our input. We want to do this task mainly because both of us had the experience on investing on China stock market. We want to utilize the theory of machine learning to better help us invest on China stock market in the future. The stock is relevant to the country’s economy directly, so if you can know some possible changes of stock market before others, you could have more chance to be successful on business. 
                         </p>
+                        <p>
+                        In our project, we use SVM to forecast stock prices with history data for our input. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20. Our algorithm will predict the stock closing price of next day and output the trading strategy for the next day: buying, selling or doing nothing. Our task is important because stock is always a good way to invest.
+                        </p>
+                        <p>Here is our final result of trading strategy:</p>
+                        <figure id=figure>
+                        <a>
+                            <img src="img/trading_strategy_result.png" id="graph">
+                        </a>
+                        <center><figcaption>Trading Strategy Result</figcaption></center>
+                        </figure>
                 </div>
             </div>
         </div>
@@ -107,15 +116,15 @@
             <div class="row text-left" id="width">
                 <div class="col-lg-12">
                         <p style="color:#F0BB5F;">
-                            Our algorithm performs SVM (Support Vector Machine) on stock price prediction. We plot the Cumulative Rate of Return of our trading strategy as above. As we can see our trading strategy performs a rate of return 35% in 90 days, with a success rate of 53.15%. During our study, we use LIBSVM, which is a library for support vector machines. It is developed by Prof. Lin Chih-Jen of National Taiwan University. Here is the link:
+                            In conclusion, we get a good prediction on stock prices and come up with a trading strategy. From this project, we learn how to use the open-source package libsvm to get a precise SVM model. Moreover, we have a better understanding of the financial stock market.
 
                         </p>
                          <p style="color:#F0BB5F;">
-                            
+                            However, there are still a few points we can improve in our project. Now our trading cycle is one day and we use day K-line. Actually we can make the cycle larger or smaller, like we can use 60-minute K-line or week K-line. That will have a different result. What’s more, we can add other statistical indicators like MACD, KDJ, RSI, etc.
                         <br><br>
                         </p>
-                        <center><a href="http://brownrout.github.io/eecs-349-final-project/downloads/Restaurants_Data.arff" id="download">Download our data</a></center>
-                        <center><a href="http://brownrout.github.io/eecs-349-final-project/downloads/Yelp_Report.pdf" id="download">Download our report as a PDF</a></center>
+                        <center><a href="http://yongchi1992.github.io/yongchi1992.github.io/downloads/data.zip" id="download">Download our data</a></center>
+                        <center><a href="http://yongchi1992.github.io/yongchi1992.github.io/downloads/Final_Report.pdf" id="download">Download our report as a PDF</a></center>
                 </div>
             </div>
         </div>
