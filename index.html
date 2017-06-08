@@ -62,12 +62,12 @@
             <div class="row text-left" id="width">
                 <div class="col-lg-12">
                         <p>
-                        SVM(Support Vector Machine) is a machine learning algorithm widely used in pattern recognition, data mining and time series prediction. In our project, we use SVM to forecast stock prices with history data for our input. We want to do this task mainly because both of us had the experience on investing on China stock market. We want to utilize the theory of machine learning to better help us invest on China stock market in the future. The stock is relevant to the country’s economy directly, so if you can know some possible changes of stock market before others, you could have more chance to be successful on business. 
+                        Our project is stock price prediction based on SVM. The task mainly is to forecast the future stock price based on the history data. We want to do this task mainly because both of us had the experience on investing on China stock market. We want to utilize the theory of machine learning to better help us invest on China stock market in the future. The stock is relevant to the country’s economy directly, so if you can know some possible changes of stock market before others, you could have more chance to be successful on business. 
                         </p>
                         <p>
-                        In our project, we use SVM to forecast stock prices with history data for our input. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20. Our algorithm will predict the stock closing price of next day and output the trading strategy for the next day: buying, selling or doing nothing. Our task is important because stock is always a good way to invest.
+                        In our project, we use SVM to forecast stock prices with history data for our input. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20. Our algorithm will predict the stock closing price of next day and output the trading strategy for the next day: buying, selling or doing nothing.
                         </p>
-                        <p>Here is our final result of trading strategy:</p>
+                        <p>Here is our final result of trading strategy, it performs a rate of return 35% in 90 days, with a success rate of 53.15%:</p>
                         <figure id=figure>
                         <a>
                             <img src="img/trading_strategy_result.png" id="graph">
@@ -88,19 +88,43 @@
             <div class="row text-left" id="width">
                 <div class="col-lg-12" >
                     <p>
-                        We are going to use the stock data from 2012-2016. The attributes we choose to describe the history data include opening price, closing price, highest price, lowest price and volume. We are going to use the stock data from 2012-2014 as our training set, stock data in 2015 as our validation set, and data in 2016 as our testing set. We are going to set up a suitable rolling-window training scheme, which means our training set will synchronize with the new date. The length of our window depends on the result of the training data.
+                        First of all, we need to acquire our stock history data. Our data comes from Tushare, which is an open-source python stock analysis package. Tushare can only give us the data of past three years, so we get the data from June 1st, 2014 to June 1st, 2017. The entire dataset contains 730 tuples and each tuple has opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20. We think that the attributes we choose can precisely describe the stock data.
                     </p>
                     
                     <p>
-                        
+                        During our study, we use LIBSVM, which is a library for support vector machines. It is developed by Prof. Lin Chih-Jen of National Taiwan University. Here is the link:
                     </p>
+                    <center><a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/" >http://www.csie.ntu.edu.tw/~cjlin/libsvm/</a></center>
+                    <p>Our algorithm performs SVM (Support Vector Machine) on stock price prediction. It mainly includes three functions from LIBSVM:</p>
+                    <p>*     function model = libsvmtrain(train_label, train_data, parameter)</p>
+                    <p>      Function: Used to return the SVM model trained by the train data, train label and parameter.</p>
+                    <p>*     function [mse, bestc, bestg] = svmregress(train_label, train_data, cmin, cmax, gmin, gmax, v, cstep, gstep, msestep)</p>
+                    <p>      Function: Used to return the best c, g given the input train_label and train_data, and the result of best c, g will be the input of libsvmtrain as the parameter.</p>
+                    <p>*     function predict = libsvmpredict(test_label, test_data, model)</p>
+                    <p>      Function: Used to predict the label according to the test data and the trained SVM model. If you have the test label input, it can compare with that result and tell you the MSE, etc.</p>
+                    <p>In our project, we take the closing price of next day as our label to predict, and opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20 of today as our train data. We get the result as follows after we run the SVM algorithm:</p>
+                    <div>optimization finished, #iter = 1501<br>nu = 0.432491<br>obj = -3.873112, rho = -1.511400<br>nSV = 257, nBSV = 194<br>Mean squared error = 4.70029e-05 (regression)<br>Squared correlation coefficient = 0.936346 (regression)<br>MSE = 4 R = 900%
+                    </div>
+                    <p>The predict price and the original price are as follows:</p>
+                    
                     <figure id=figure>
                         <a>
-                            <img src="img/header-bg.jpg" id="graph">
+                            <img src="img/prediction.png" id="graph">
+                        </a>
+                        <center><figcaption></figcaption></center>
+                    </figure>
+
+                    <p>According to the result of prediction, we set up the strategy: if the predict price of (next day) is higher than today’s closing price over 0.5%, then we choose to buy in with the price of today’s closing price; if the predict price of (next day) is lower than today’s closing price over 0.5%, then we choose to sell out with the price of today’s closing price; else we choose to do nothing.</p>
+                    <p>We plot the Cumulative Rate of Return of our trading strategy as above. As we can see our trading strategy performs a rate of return 35% in 90 days, with a success rate of 53.15%.</p>
+
+                    <figure id=figure>
+                        <a>
+                            <img src="img/trading_strategy_result.png" id="graph">
                         </a>
                         <center><figcaption></figcaption></center>
                     </figure>
                     
+
                 </div>
             </div>
         </div>
