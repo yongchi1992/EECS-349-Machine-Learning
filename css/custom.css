@@ -470,6 +470,10 @@ body {
      Custom CSS
 **/
 
+.divcss3{
+    border:1px solid #F00
+    font-size: 12px;
+} 
 
 .navbar-default {
     background-color: #F0BB5F;
