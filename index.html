@@ -94,7 +94,8 @@
                     <p>
                         During our study, we use LIBSVM, which is a library for support vector machines. It is developed by Prof. Lin Chih-Jen of National Taiwan University. Here is the link:
                     </p>
-                    <center><a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/" >http://www.csie.ntu.edu.tw/~cjlin/libsvm/</a></center>
+                    <center><a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/" style="font-size: 20px">http://www.csie.ntu.edu.tw/~cjlin/libsvm/</a></center>
+                    <br>
                     <p>Our algorithm performs SVM (Support Vector Machine) on stock price prediction. It mainly includes three functions from LIBSVM:</p>
                     <p>*     function model = libsvmtrain(train_label, train_data, parameter)</p>
                     <p>      Function: Used to return the SVM model trained by the train data, train label and parameter.</p>
@@ -103,10 +104,12 @@
                     <p>*     function predict = libsvmpredict(test_label, test_data, model)</p>
                     <p>      Function: Used to predict the label according to the test data and the trained SVM model. If you have the test label input, it can compare with that result and tell you the MSE, etc.</p>
                     <p>In our project, we take the closing price of next day as our label to predict, and opening price, closing price, highest price, lowest price, volume, price_change, p_change, ma5, ma10, ma20, v_ma5, v_ma10, v_ma20 of today as our train data. We get the result as follows after we run the SVM algorithm:</p>
-                    <div class = “divcss3”>optimization finished, #iter = 1501<br>nu = 0.432491<br>obj = -3.873112, rho = -1.511400<br>nSV = 257, nBSV = 194<br>Mean squared error = 4.70029e-05 (regression)<br>Squared correlation coefficient = 0.936346 (regression)<br>MSE = 4 R = 900%
-                    </div>
+
+                    <p><br>****************************************************************************<br>optimization finished, #iter = 1501<br>nu = 0.432491<br>obj = -3.873112, rho = -1.511400<br>nSV = 257, nBSV = 194<br>Mean squared error = 4.70029e-05 (regression)<br>Squared correlation coefficient = 0.936346 (regression)<br>MSE = 4 R = 900%<br>****************************************************************************<br>
+                    </p>
+
                     <p>The predict price and the original price are as follows:</p>
-                    
+                     
                     <figure id=figure>
                         <a>
                             <img src="img/prediction.png" id="graph">
